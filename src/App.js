@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React from 'react'
+import Header from "./Components/Header";
+class App extends React.Component {
+    helpText = "Label"
+    render(){
+        return (
+            <div>
+                <Header title="Шапка!" />
+                <span>{this.helpText}</span>
+                <input type="text" onClick={this.inputClick} onMouseEnter={this.mouseEnter}/>
+            </div>
+        )
+    }
+    inputClick() {console.log("Clicked")}
+    mouseEnter() {console.log("Enter")}
 }
-
-export default App;
+export default App
